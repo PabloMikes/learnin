@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Definiční obory funkcí</title>
+  <!-- MathJax CDN for rendering mathematical expressions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #e5e5e5;
+      font-family: 'Courier New', Courier;
+      line-height: 1.3;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #000;
+      padding: 10px;
+      border-bottom: 3px solid #e5e5e5;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      width: 98%;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 1px 1px 0 #000;
+    }
+    .container {
+      display: flex;
+      flex: 1;
+      margin-top: 60px;
+    }
+    #topics {
+      width: 150px;
+      background-color: #333;
+      border-right: 3px solid #e5e5e5;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+    .content-right {
+      flex: 1;
+      padding: 15px;
+      background-color: #333;
+      border: 3px solid #e5e5e5;
+      margin: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding: 5px 0;
+      border-bottom: 1px dashed #e5e5e5;
+    }
+    .exercise {
+      background-color: #222;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #e5e5e5;
+      box-shadow: 3px 3px 0 #000;
+    }
+    .exercise p {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+    .answer {
+      display: none;
+      margin-top: 5px;
+      font-size: 0.8rem;
+      color: #e5e5e5;
+      background-color: #444;
+      padding: 5px;
+      border: 1px solid #e5e5e5;
+    }
+    .answer.show {
+      display: block;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      background-color: #e5e5e5;
+      color: #000;
+      border: 2px solid #000;
+      font-size: 0.7rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.1s;
+      word-wrap: break-word;
+    }
+    button:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 3px 3px 0 #000;
+      background-color: #fff;
+    }
+    .toggle-answer {
+      background-color: #555;
+      color: #e5e5e5;
+      border: 2px solid #e5e5e5;
+      font-size: 0.7rem;
+      padding: 5px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+    .toggle-answer:hover {
+      background-color: #666;
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 #000;
+    }
+    /* Ensure MathJax renders in uppercase to match brutalist style */
+    .MathJax {
+      font-family: 'Courier New', Courier, monospace !important;
+      text-transform: uppercase !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Definiční obory funkcí</h1>
+  </header>
+
+  <div class="container">
+    <section id="topics"></section>
+    <div class="content-right">
+      <section id="explanation"></section>
+      <section id="exercises"></section>
+    </div>
+  </div>
+
+  <script>
+    fetch('highschool2.json')
+      .then(response => response.json())
+      .then(data => {
+        const topicsContainer = document.getElementById('topics');
+        data.topics.forEach(topic => {
+          const topicButton = document.createElement('button');
+          topicButton.textContent = topic.title;
+          topicButton.onclick = () => showTopicDetail(topic);
+          topicsContainer.appendChild(topicButton);
+        });
+
+        function showTopicDetail(topic) {
+          const explanationContainer = document.getElementById('explanation');
+          explanationContainer.innerHTML = '';
+          topic.detailedExplanation.forEach(item => {
+            const element = document.createElement(item.type);
+            if (item.type === 'ul') {
+              item.items.forEach(subItem => {
+                const li = document.createElement('li');
+                li.textContent = subItem;
+                element.appendChild(li);
+              });
+            } else {
+              element.textContent = item.text;
+            }
+            explanationContainer.appendChild(element);
+          });
+
+          const exercisesContainer = document.getElementById('exercises');
+          exercisesContainer.innerHTML = '';
+          topic.exercises.forEach(exercise => {
+            const exerciseElement = document.createElement('div');
+            exerciseElement.classList.add('exercise');
+            
+            const question = document.createElement('p');
+            question.textContent = exercise.question;
+            exerciseElement.appendChild(question);
+            
+            const answer = document.createElement('p');
+            answer.classList.add('answer');
+            answer.textContent = `Odpověď: ${exercise.answer}`;
+            
+            const toggleButton = document.createElement('button');
+            toggleButton.classList.add('toggle-answer');
+            toggleButton.textContent = 'Zobrazit odpověď';
+            toggleButton.onclick = () => {
+              answer.classList.toggle('show');
+              toggleButton.textContent = answer.classList.contains('show') ? 'Skrýt odpověď' : 'Zobrazit odpověď';
+            };
+            
+            exerciseElement.appendChild(toggleButton);
+            exerciseElement.appendChild(answer);
+            exercisesContainer.appendChild(exerciseElement);
+          });
+
+          // Trigger MathJax to render mathematical expressions
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+      })
+      .catch(error => {
+        console.error('Chyba při načítání JSON:', error);
+      });
+  </script>
+</body>
+</html>

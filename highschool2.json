@@ -1,0 +1,735 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "title": "Definiční obory funkcí",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co je definiční obor?"
+        },
+        {
+          "type": "p",
+          "text": "Definiční obor funkce je množina všech hodnot vstupní proměnné (obvykle \\( x \\)), pro které funkce dává smysluplný reálný výsledek. Jinými slovy, jsou to všechna čísla, která můžeme do funkce 'zastrčit', aniž bychom narazili na problém, jako je dělení nulou nebo odmocnina ze záporného čísla."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "U odmocnin musí být pododmocninový výraz nezáporný (\\( \\geq 0 \\)).",
+            "U zlomků (racionálních funkcí) nesmí být jmenovatel roven nule.",
+            "U logaritmů musí být argument kladný (\\( > 0 \\))."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak určit definiční obor?"
+        },
+        {
+          "type": "p",
+          "text": "1. Najdi 'nebezpečné' části funkce (odmocnina, zlomek, logaritmus). 2. Napiš podmínky, aby funkce dávala smysl (např. jmenovatel \\( \\neq 0 \\)). 3. Vyřeš tyto podmínky jako nerovnosti. 4. Zapiš obor jako intervaly."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: Pro \\( f(x) = \\sqrt{x - 2} \\) musí být \\( x - 2 \\geq 0 \\), tedy \\( x \\geq 2 \\). Definiční obor je \\( [2, \\infty) \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: Pro \\( f(x) = \\frac{1}{x - 3} \\) nesmí být jmenovatel roven nule, tedy \\( x \\neq 3 \\). Definiční obor je \\( \\mathbb{R} \\setminus \\{3\\} \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: Pro \\( f(x) = \\log(x + 1) \\) musí být \\( x + 1 > 0 \\), tedy \\( x > -1 \\). Definiční obor je \\( (-1, \\infty) \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit funkce s více omezeními. Například \\( f(x) = \\frac{\\sqrt{x^2 - 1}}{\\ln(x - 2)} \\): Zde musí platit \\( x^2 - 1 \\geq 0 \\) (t.j. \\( x \\leq -1 \\) nebo \\( x \\geq 1 \\)) a zároveň \\( x - 2 > 0 \\) a \\( \\neq 1 \\) (protože \\( \\ln(1) = 0 \\)). Další chyták: Funkce s absolutní hodnotou, jako \\( f(x) = \\frac{1}{\\sqrt{|x - 3|}} \\), kde obor je vše kromě \\( x = 3 \\), protože absolutní hodnota zajišťuje nezápornost."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Určete definiční obor \\( f(x) = \\sqrt{x + 1} \\).",
+          "answer": "\\( x \\geq -1 \\)"
+        },
+        {
+          "id": 2,
+          "question": "Určete definiční obor \\( f(x) = \\frac{1}{x^2 - 4} \\).",
+          "answer": "\\( x \\neq 2 \\) a \\( x \\neq -2 \\)"
+        },
+        {
+          "id": 3,
+          "question": "Určete definiční obor \\( f(x) = \\log(3 - x) \\).",
+          "answer": "\\( x < 3 \\)"
+        },
+        {
+          "id": 4,
+          "question": "Určete definiční obor \\( f(x) = \\sqrt{4 - x^2} \\).",
+          "answer": "\\( x \\in [-2, 2] \\)"
+        },
+        {
+          "id": 5,
+          "question": "Určete definiční obor \\( f(x) = \\frac{1}{x + 1} + \\sqrt{x - 1} \\).",
+          "answer": "\\( x \\geq 1, x \\neq -1 \\)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Správný graf funkce na množině R",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co je graf funkce?"
+        },
+        {
+          "type": "p",
+          "text": "Graf funkce je vizuální znázornění všech bodů \\( (x, f(x)) \\) v rovině, kde \\( x \\) je z definičního oboru a \\( f(x) \\) je hodnota funkce. Pro správné nakreslení grafu musíme analyzovat klíčové vlastnosti funkce, jako jsou průsečíky s osami, směr růstu (monotonicita), extrémy nebo asymptoty."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Lineární funkce (např. \\( y = mx + q \\)): Přímka s konstantní sklonem \\( m \\) a průsečíkem s osou \\( y \\) v bodě \\( (0, q) \\).",
+            "Kvadratická funkce (např. \\( y = ax^2 + bx + c \\)): Parabola, která může být otevřená nahoru (\\( a > 0 \\)) nebo dolů (\\( a < 0 \\)).",
+            "Racionální funkce: Mohou mít asymptoty (např. \\( y = \\frac{1}{x} \\) má vertikální asymptotu v \\( x = 0 \\))."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak určit správný graf?"
+        },
+        {
+          "type": "p",
+          "text": "1. Urči definiční obor (kde funkce existuje). 2. Najdi průsečíky s osami: osa \\( y \\) (\\( x = 0 \\)), osa \\( x \\) (\\( f(x) = 0 \\)). 3. Zjisti chování funkce (rostoucí/klesající, extrémy, inflexní body). 4. Zkontroluj, zda má funkce asymptoty (např. u zlomků). 5. Nakresli graf podle těchto informací."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: Pro \\( y = x^2 \\) je vrchol v \\( (0,0) \\), parabola je otevřená nahoru, průsečíky s osou \\( x \\) jsou v \\( x = 0 \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: Pro \\( y = x + 1 \\) je graf přímka s průsečíkem \\( y = 1 \\) a sklonem 1."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: Pro \\( y = \\frac{1}{x} \\) je vertikální asymptota v \\( x = 0 \\) a horizontální asymptota v \\( y = 0 \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit funkce s klamavými grafy, např. \\( y = \\frac{x^3}{x-1} \\), kde je třeba zohlednit vertikální asymptotu v \\( x = 1 \\) a chování pro velké \\( x \\) (podobné \\( y = x^2 \\)). Další chyták: Funkce jako \\( y = |x^2 - 1| \\) mění tvar grafu kvůli absolutní hodnotě, což může vést k neočekávaným extrémům."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Nakreslete graf \\( y = x + 1 \\).",
+          "answer": "Přímka s průsečíkem \\( y = 1 \\)"
+        },
+        {
+          "id": 2,
+          "question": "Nakreslete graf \\( y = x^2 - 4 \\).",
+          "answer": "Parabola otevřená nahoru s vrcholem v \\( (0, -4) \\)"
+        },
+        {
+          "id": 3,
+          "question": "Nakreslete graf \\( y = \\frac{1}{x - 2} \\).",
+          "answer": "Hyperbola s vertikální asymptotou \\( x = 2 \\)"
+        },
+        {
+          "id": 4,
+          "question": "Nakreslete graf \\( y = -x^2 + 1 \\).",
+          "answer": "Parabola otevřená dolů s vrcholem v \\( (0, 1) \\)"
+        },
+        {
+          "id": 5,
+          "question": "Nakreslete graf \\( y = |x| \\).",
+          "answer": "Funkce tvořící 'V' s vrcholem v \\( (0, 0) \\)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Předpis goniometrické funkce",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co jsou goniometrické funkce?"
+        },
+        {
+          "type": "p",
+          "text": "Goniometrické funkce (\\( \\sin \\), \\( \\cos \\), \\( \\tan \\)) popisují vztahy v trojúhelníku nebo periodické jevy, jako vlny. Jejich předpis je obvykle ve tvaru \\( y = A \\sin(Bx + C) + D \\), kde každý parametr mění graf funkce."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "\\( A \\): Amplituda (výška vlny, jak moc funkce 'kolísá').",
+            "\\( B \\): Ovlivňuje periodu (délka jednoho cyklu je \\( \\frac{2\\pi}{B} \\)).",
+            "\\( C \\): Fázový posun (posouvá graf vlevo nebo vpravo).",
+            "\\( D \\): Vertikální posun (zvedá nebo snižuje celý graf)."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak určit předpis?"
+        },
+        {
+          "type": "p",
+          "text": "1. Urči typ funkce (\\( \\sin \\), \\( \\cos \\), \\( \\tan \\)). 2. Najdi amplitudu z maximální/minimální hodnoty. 3. Spočítej periodu z délky cyklu. 4. Zjisti posuny z grafu nebo hodnot."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: Pro \\( y = 2 \\sin(x) \\) je amplituda 2, perioda \\( 2\\pi \\), bez posunů."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: Pro \\( y = \\cos(2x) \\) je perioda \\( \\pi \\) (\\( \\frac{2\\pi}{2} \\)), amplituda 1."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: Pro \\( y = 3 \\sin(x + \\frac{\\pi}{2}) + 1 \\) je amplituda 3, perioda \\( 2\\pi \\), fázový posun \\( -\\frac{\\pi}{2} \\), vertikální posun \\( +1 \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit kombinace goniometrických funkcí, např. \\( y = \\sin(x) + \\cos(x) \\), které vyžadují převod na jeden sinus (pomocí identity \\( \\sin(x + \\phi) \\)). Další chyták: Funkce jako \\( y = \\tan(2x + \\pi) \\) mají periodu \\( \\frac{\\pi}{2} \\) a vertikální asymptoty, které komplikují analýzu."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Napište předpis pro sinus s amplitudou 2.",
+          "answer": "\\( y = 2 \\sin(x) \\)"
+        },
+        {
+          "id": 2,
+          "question": "Napište předpis pro kosinus s periodou \\( \\frac{\\pi}{2} \\).",
+          "answer": "\\( y = \\cos(4x) \\)"
+        },
+        {
+          "id": 3,
+          "question": "Napište předpis pro sinus s amplitudou 3 a fázovým posunem \\( \\frac{\\pi}{4} \\).",
+          "answer": "\\( y = 3 \\sin(x + \\frac{\\pi}{4}) \\)"
+        },
+        {
+          "id": 4,
+          "question": "Napište předpis pro tangens s periodou \\( \\pi \\).",
+          "answer": "\\( y = \\tan(x) \\)"
+        },
+        {
+          "id": 5,
+          "question": "Napište předpis pro sinus s vertikálním posunem 2 a periodou \\( 4\\pi \\).",
+          "answer": "\\( y = \\sin(\\frac{x}{2}) + 2 \\)"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Počet kořenů rovnice v intervalu",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co jsou kořeny rovnice?"
+        },
+        {
+          "type": "p",
+          "text": "Kořeny rovnice \\( f(x) = 0 \\) jsou hodnoty \\( x \\), při kterých funkce protíná osu \\( x \\). Počet kořenů v daném intervalu závisí na tvaru funkce a chování v intervalu."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Bolzanova věta: Pokud funkce mění znaménko na krajích intervalu (\\( f(a)f(b) < 0 \\)), má v intervalu alespoň jeden kořen.",
+            "Derivace: Pomáhá najít extrémy a monotonicitu, což ukazuje, kolikrát funkce protíná osu \\( x \\).",
+            "Grafická analýza: Vizualizace grafu pomáhá odhadnout počet kořenů."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak určit počet kořenů?"
+        },
+        {
+          "type": "p",
+          "text": "1. Najdi kořeny rovnice (např. kvadratická rovnice, goniometrická). 2. Zkontroluj, které kořeny leží v zadaném intervalu. 3. Použij derivace nebo graf pro potvrzení počtu průsečíků s osou \\( x \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: Pro \\( x^2 - 1 = 0 \\) v \\( [0,2] \\) je kořen \\( x = 1 \\) (druhý kořen \\( x = -1 \\) je mimo interval)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: Pro \\( \\sin(x) = 0 \\) v \\( [0, \\pi] \\) jsou kořeny \\( x = 0 \\), \\( x = \\pi \\), tedy 2 kořeny."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: Pro \\( x^3 - x = 0 \\) v \\( [-1, 1] \\) jsou kořeny \\( x = -1 \\), \\( 0 \\), \\( 1 \\), tedy 3 kořeny."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit rovnice s více kořeny, např. \\( x^4 - 5x^2 + 4 = 0 \\), kde je třeba analyzovat chování polynomu vyššího stupně. Další chyták: Goniometrické rovnice jako \\( \\sin(2x) = \\cos(x) \\) vyžadují převod na jednu funkci a řešení v intervalu, což může vést k přehlédnutí kořenů kvůli periodicitě."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Kolik kořenů má \\( x^2 - 1 = 0 \\) v \\( [0,2] \\)?",
+          "answer": "1"
+        },
+        {
+          "id": 2,
+          "question": "Kolik kořenů má \\( \\sin(x) = 0 \\) v \\( [0, 2\\pi] \\)?",
+          "answer": "3"
+        },
+        {
+          "id": 3,
+          "question": "Kolik kořenů má \\( x^2 - 4x + 4 = 0 \\) v \\( [-1, 3] \\)?",
+          "answer": "1"
+        },
+        {
+          "id": 4,
+          "question": "Kolik kořenů má \\( x^3 - 4x = 0 \\) v \\( [-2, 2] \\)?",
+          "answer": "3"
+        },
+        {
+          "id": 5,
+          "question": "Kolik kořenů má \\( \\cos(x) = 0 \\) v \\( [0, \\pi] \\)?",
+          "answer": "1"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Výpočet logaritmu se složitým základem",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co je logaritmus?"
+        },
+        {
+          "type": "p",
+          "text": "Logaritmus \\( \\log_b(a) \\) udává, na jakou mocninu musíme základ \\( b \\) umocnit, aby vzniklo číslo \\( a \\). Například \\( \\log_2(8) = 3 \\), protože \\( 2^3 = 8 \\). Pro složitější základ lze použít vzorec \\( \\log_b(a) = \\frac{\\ln(a)}{\\ln(b)} \\)."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Základ logaritmu musí být kladný a různý od 1 (\\( b > 0 \\), \\( b \\neq 1 \\)).",
+            "Argument logaritmu musí být kladný (\\( a > 0 \\)).",
+            "Převod logaritmu: \\( \\log_b(a) = \\frac{\\ln(a)}{\\ln(b)} \\) nebo \\( \\log_b(a) = \\frac{\\log_c(a)}{\\log_c(b)} \\)."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak vypočítat logaritmus?"
+        },
+        {
+          "type": "p",
+          "text": "1. Zkontroluj definiční obor (\\( a > 0 \\), \\( b > 0 \\), \\( b \\neq 1 \\)). 2. Pokud je základ složitý, použij převodní vzorec. 3. Zjednoduš výraz, pokud je třeba."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: \\( \\log_{\\sqrt{2}}(4) = \\frac{\\ln(4)}{\\ln(\\sqrt{2})} = \\frac{\\ln(4)}{\\frac{1}{2} \\ln(2)} = \\frac{2 \\ln(2)}{\\frac{1}{2} \\ln(2)} = 4 \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: \\( \\log_{\\frac{1}{2}}(\\frac{1}{8}) = \\frac{\\ln(\\frac{1}{8})}{\\ln(\\frac{1}{2})} = \\frac{-\\ln(8)}{-\\ln(2)} = \\frac{3 \\ln(2)}{\\ln(2)} = 3 \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: \\( \\log_{10}(100) = \\frac{\\ln(100)}{\\ln(10)} = 2 \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit logaritmy s proměnným základem, např. \\( \\log_{x^2}(x) \\), kde je třeba řešit podmínky \\( x^2 > 0 \\), \\( x^2 \\neq 1 \\), \\( x > 0 \\). Další chyták: Výrazy jako \\( \\log_{\\sin(x)}(2) \\), kde musí být \\( \\sin(x) > 0 \\) a \\( \\neq 1 \\), což vyžaduje analýzu goniometrické funkce v kombinaci s logaritmem."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Vypočítejte \\( \\log_{\\sqrt{2}}(4) \\).",
+          "answer": "4"
+        },
+        {
+          "id": 2,
+          "question": "Vypočítejte \\( \\log_{\\frac{1}{3}}(9) \\).",
+          "answer": "-2"
+        },
+        {
+          "id": 3,
+          "question": "Vypočítejte \\( \\log_{4}(16) \\).",
+          "answer": "2"
+        },
+        {
+          "id": 4,
+          "question": "Vypočítejte \\( \\log_{\\frac{1}{5}}(25) \\).",
+          "answer": "-2"
+        },
+        {
+          "id": 5,
+          "question": "Vypočítejte \\( \\log_{2}(\\frac{1}{4}) \\).",
+          "answer": "-2"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Průsečíky paraboly s osami x a y",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co jsou průsečíky paraboly?"
+        },
+        {
+          "type": "p",
+          "text": "Průsečíky paraboly \\( y = ax^2 + bx + c \\) s osami jsou body, kde parabola protíná osu \\( x \\) (\\( y = 0 \\)) nebo osu \\( y \\) (\\( x = 0 \\)). Tyto body pomáhají určit tvar a polohu grafu."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Osa \\( y \\): Nahradíme \\( x = 0 \\), tedy \\( y = c \\), bod je \\( (0, c) \\).",
+            "Osa \\( x \\): Řešíme rovnici \\( ax^2 + bx + c = 0 \\), kořeny určují body \\( (x_1, 0) \\), \\( (x_2, 0) \\).",
+            "Diskriminant (\\( D = b^2 - 4ac \\)) určuje počet průsečíků s osou \\( x \\): \\( D > 0 \\) (2 kořeny), \\( D = 0 \\) (1 kořen), \\( D < 0 \\) (žádné kořeny)."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak najít průsečíky?"
+        },
+        {
+          "type": "p",
+          "text": "1. Pro osu \\( y \\): Dosadíme \\( x = 0 \\). 2. Pro osu \\( x \\): Vyřešíme kvadratickou rovnici. 3. Pokud \\( D < 0 \\), parabola osu \\( x \\) neprotíná."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: Pro \\( y = x^2 - 4 \\): Průsečíky s \\( x \\) (\\( x^2 - 4 = 0 \\)) jsou \\( (2,0) \\), \\( (-2,0) \\). Průsečík s \\( y \\) je \\( (0,-4) \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: Pro \\( y = 2x^2 + 3 \\): Průsečík s \\( y \\) je \\( (0,3) \\), s \\( x \\) není (\\( D < 0 \\))."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: Pro \\( y = x^2 - 2x + 1 \\): Průsečík s \\( x \\) je \\( (1,0) \\) (\\( D = 0 \\)), s \\( y \\) je \\( (0,1) \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit paraboly s proměnnými koeficienty, např. \\( y = kx^2 - 4 \\), kde počet průsečíků s osou \\( x \\) závisí na znaménku \\( k \\). Další chyták: Parabola ve tvaru \\( y = (x - h)^2 + k \\), kde je třeba přepsat výraz pro nalezení kořenů, např. \\( y = (x - 1)^2 - 1 \\) má průsečíky v \\( x = 0 \\), \\( x = 2 \\)."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Průsečíky \\( y = x^2 - 4 \\) s \\( x \\).",
+          "answer": "\\( (2,0), (-2,0) \\)"
+        },
+        {
+          "id": 2,
+          "question": "Průsečíky \\( y = x^2 + 2 \\) s \\( y \\).",
+          "answer": "\\( (0,2) \\)"
+        },
+        {
+          "id": 3,
+          "question": "Průsečíky \\( y = x^2 - 6x + 9 \\) s \\( x \\).",
+          "answer": "\\( (3,0) \\)"
+        },
+        {
+          "id": 4,
+          "question": "Průsečíky \\( y = 2x^2 - 8 \\) s \\( x \\).",
+          "answer": "\\( (2,0), (-2,0) \\)"
+        },
+        {
+          "id": 5,
+          "question": "Průsečíky \\( y = -x^2 + 1 \\) s \\( y \\).",
+          "answer": "\\( (0,1) \\)"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Obor hodnot a předpis funkce z bodů",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co je obor hodnot?"
+        },
+        {
+          "type": "p",
+          "text": "Obor hodnot funkce je množina všech možných výstupních hodnot \\( y \\), které funkce může nabývat pro \\( x \\) z definičního oboru. Předpis funkce z bodů znamená najít rovnici funkce, která prochází danými body."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Pro dva body lze určit lineární funkci \\( y = mx + q \\) (sklon \\( m \\), průsečík \\( q \\)).",
+            "Obor hodnot závisí na typu funkce: např. \\( y = x^2 \\) má obor hodnot \\( [0, \\infty) \\).",
+            "Pro více bodů může být potřeba kvadratická nebo vyšší funkce."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak určit předpis a obor hodnot?"
+        },
+        {
+          "type": "p",
+          "text": "1. Pro předpis: Dosadíme body do rovnice a vyřešíme koeficienty. 2. Pro obor hodnot: Analyzujeme chování funkce (minima, maxima, asymptoty). 3. Zkontrolujeme definiční obor."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: Pro body \\( (0,0) \\), \\( (1,1) \\) je předpis \\( y = x \\), obor hodnot \\( \\mathbb{R} \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: Pro \\( y = x^2 \\) je obor hodnot \\( [0, \\infty) \\), protože \\( x^2 \\geq 0 \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: Pro body \\( (1,2) \\), \\( (2,4) \\), \\( (3,6) \\) je předpis \\( y = 2x \\) (lineární), obor hodnot \\( \\mathbb{R} \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou být zadány body, které neodpovídají jednoduché funkci, např. tři body pro kvadratickou funkci \\( y = ax^2 + bx + c \\), kde je třeba vyřešit soustavu rovnic. Další chyták: Funkce s omezeným definičním oborem, např. \\( y = \\frac{1}{x} \\) pro body \\( (1,1) \\), \\( (2,\\frac{1}{2}) \\), kde obor hodnot je \\( (0, \\infty) \\) pro \\( x > 0 \\)."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Předpis přímky pro body \\( (0,0) \\), \\( (1,1) \\).",
+          "answer": "\\( y = x \\)"
+        },
+        {
+          "id": 2,
+          "question": "Předpis přímky pro body \\( (1,2) \\), \\( (3,6) \\).",
+          "answer": "\\( y = 2x \\)"
+        },
+        {
+          "id": 3,
+          "question": "Určete obor hodnot \\( y = x^2 + 1 \\).",
+          "answer": "\\( [1, \\infty) \\)"
+        },
+        {
+          "id": 4,
+          "question": "Předpis přímky pro body \\( (-1,3) \\), \\( (2,0) \\).",
+          "answer": "\\( y = -x + 2 \\)"
+        },
+        {
+          "id": 5,
+          "question": "Určete obor hodnot \\( y = \\frac{1}{x} \\) pro \\( x > 0 \\).",
+          "answer": "\\( (0, \\infty) \\)"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Zjednodušení goniometrických výrazů",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co jsou goniometrické identity?"
+        },
+        {
+          "type": "p",
+          "text": "Goniometrické identity jsou rovnice, které platí pro všechny hodnoty úhlů a umožňují zjednodušit složité výrazy obsahující \\( \\sin \\), \\( \\cos \\), \\( \\tan \\) apod."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Základní identita: \\( \\sin^2(x) + \\cos^2(x) = 1 \\).",
+            "Tangens a kotangens: \\( \\tan(x) = \\frac{\\sin(x)}{\\cos(x)} \\), \\( \\tan(x) \\cdot \\cot(x) = 1 \\).",
+            "Součtové identity: např. \\( \\sin(a + b) = \\sin(a)\\cos(b) + \\cos(a)\\sin(b) \\)."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak zjednodušit výraz?"
+        },
+        {
+          "type": "p",
+          "text": "1. Identifikuj použitelné identity. 2. Nahraď složité části výrazu pomocí identit. 3. Zjednoduš algebraicky (společné členy, krácení zlomků)."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: Zjednodušte \\( \\sin^2(x) + \\cos^2(x) = 1 \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: \\( \\tan(x) \\cdot \\cot(x) = \\frac{\\sin(x)}{\\cos(x)} \\cdot \\frac{\\cos(x)}{\\sin(x)} = 1 \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: \\( \\sin(x + \\frac{\\pi}{2}) = \\sin(x)\\cos(\\frac{\\pi}{2}) + \\cos(x)\\sin(\\frac{\\pi}{2}) = \\cos(x) \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit výrazy s kombinací více identit, např. zjednodušení \\( (\\sin(x) + \\cos(x))^2 \\), které vyžaduje rozpis a použití \\( \\sin^2(x) + \\cos^2(x) = 1 \\). Další chyták: Výrazy jako \\( \\frac{1}{1 + \\sin(x)} \\) mohou být zjednodušeny pomocí konjugátu \\( (1 - \\sin(x)) \\), což vede k nečekaným tvarům, např. \\( \\frac{\\cos^2(x)}{1 - \\sin^2(x)} \\)."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Zjednodušte \\( \\sin^2(x) + \\cos^2(x) \\).",
+          "answer": "1"
+        },
+        {
+          "id": 2,
+          "question": "Zjednodušte \\( \\frac{\\sin(x)}{\\cos(x)} \\cdot \\cos(x) \\).",
+          "answer": "\\( \\sin(x) \\)"
+        },
+        {
+          "id": 3,
+          "question": "Zjednodušte \\( \\cos(x + \\pi) \\).",
+          "answer": "\\( -\\cos(x) \\)"
+        },
+        {
+          "id": 4,
+          "question": "Zjednodušte \\( 1 - \\sin^2(x) \\).",
+          "answer": "\\( \\cos^2(x) \\)"
+        },
+        {
+          "id": 5,
+          "question": "Zjednodušte \\( \\frac{\\sin(x)\\cos(x)}{\\sin(x)} \\).",
+          "answer": "\\( \\cos(x) \\)"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Množina řešení nerovnice v oboru R",
+      "detailedExplanation": [
+        {
+          "type": "h3",
+          "text": "Co jsou nerovnice?"
+        },
+        {
+          "type": "p",
+          "text": "Nerovnice popisují vztahy, kde jedna strana není rovná druhé, např. \\( x > 5 \\) nebo \\( x^2 < 4 \\). Množina řešení je soubor všech \\( x \\), která nerovnici splňují."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Lineární nerovnice: Řešíme jako rovnice, např. \\( x > a \\Rightarrow x \\in (a, \\infty) \\).",
+            "Kvadratické nerovnice: Řešíme pomocí kořenů rovnice a testováním intervalů.",
+            "Goniometrické nerovnice: Využíváme periodicitu a grafy funkcí."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Jak řešit nerovnice?"
+        },
+        {
+          "type": "p",
+          "text": "1. Převeď nerovnici na tvar \\( f(x) > 0 \\) (nebo \\( < 0 \\)). 2. Najdi kořeny \\( f(x) = 0 \\). 3. Rozděl číselnou osu na intervaly a zkontroluj znaménko \\( f(x) \\). 4. Zapiš řešení jako intervaly."
+        },
+        {
+          "type": "h3",
+          "text": "Příklady"
+        },
+        {
+          "type": "p",
+          "text": "Příklad 1: \\( x > 5 \\Rightarrow x \\in (5, \\infty) \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 2: \\( x^2 - 4 < 0 \\Rightarrow (x - 2)(x + 2) < 0 \\Rightarrow x \\in (-2, 2) \\)."
+        },
+        {
+          "type": "p",
+          "text": "Příklad 3: \\( \\sin(x) > 0 \\) v \\( [0, 2\\pi) \\Rightarrow x \\in (0, \\pi) \\)."
+        },
+        {
+          "type": "h3",
+          "text": "Chytáky a složitější případy"
+        },
+        {
+          "type": "p",
+          "text": "Mohou se objevit nerovnice s absolutní hodnotou, např. \\( |x - 1| < 2 \\), která vede k \\( -1 < x < 3 \\). Další chyták: Nerovnice jako \\( \\frac{x^2}{x-1} > 0 \\) vyžadují analýzu znamének a vyloučení \\( x=1 \\) kvůli definičnímu oboru."
+        }
+      ],
+      "exercises": [
+        {
+          "id": 1,
+          "question": "Řešte \\( x > 5 \\).",
+          "answer": "\\( x \\in (5, \\infty) \\)"
+        },
+        {
+          "id": 2,
+          "question": "Řešte \\( x^2 - 9 < 0 \\).",
+          "answer": "\\( x \\in (-3, 3) \\)"
+        },
+        {
+          "id": 3,
+          "question": "Řešte \\( |x - 2| < 3 \\).",
+          "answer": "\\( x \\in (-1, 5) \\)"
+        },
+        {
+          "id": 4,
+          "question": "Řešte \\( \\sin(x) > 0 \\) v \\( [0, 2\\pi) \\).",
+          "answer": "\\( x \\in (0, \\pi) \\)"
+        },
+        {
+          "id": 5,
+          "question": "Řešte \\( x^2 - 2x - 3 > 0 \\).",
+          "answer": "\\( x \\in (-\\infty, -1) \\cup (3, \\infty) \\)"
+        }
+      ]
+    }
+  ],
+  "overallQuestions": []
+}
