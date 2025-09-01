@@ -1,1 +1,1 @@
-(View)[https://pablomikes.github.io/learnin/]
+[View](https://pablomikes.github.io/learnin/)
